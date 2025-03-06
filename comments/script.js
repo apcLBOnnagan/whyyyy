@@ -1,7 +1,6 @@
-const SUPABASE_URL = 'https://glprxvdpjkydgshlwdqu.supabase.co'; // Replace with your Supabase URL
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscHJ4dmRwamt5ZGdzaGx3ZHF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyNDMzOTEsImV4cCI6MjA1NjgxOTM5MX0.bN7BOXLlioQ2Gp5gJfvxKSf9DK7MgsWZISrwqfMkCPk'; // Replace with your Supabase anon key
-
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseUrl = 'https://glprxvdpjkydgshlwdqu.supabase.co';
+const supabaseKey = 'eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscHJ4dmRwamt5ZGdzaGx3ZHF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyNDMzOTEsImV4cCI6MjA1NjgxOTM5MX0'; //It is best to not use process.env on client side code.
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const commentForm = document.getElementById('comment-form');
 const commentsList = document.getElementById('comments-list');
