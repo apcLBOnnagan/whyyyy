@@ -1,4 +1,9 @@
 @media screen and (min-width: 1201px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+  
   .section-container {
     display: flex;
     padding-left: 5rem; 
