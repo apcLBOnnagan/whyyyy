@@ -1,8 +1,9 @@
+import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = 'https://glprxvdpjkydgshlwdqu.supabase.co';
-const supabaseKey = 'eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscHJ4dmRwamt5ZGdzaGx3ZHF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyNDMzOTEsImV4cCI6MjA1NjgxOTM5MX0'; //It is best to not use process.env on client side code.
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscHJ4dmRwamt5ZGdzaGx3ZHF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyNDMzOTEsImV4cCI6MjA1NjgxOTM5MX0.bN7BOXLlioQ2Gp5gJfvxKSf9DK7MgsWZISrwqfMkCPk';
 
+export const supabase = createClient(supabaseUrl, supabaseKey);
 
 const commentForm = document.getElementById('comment-form');
 const commentsList = document.getElementById('comments-list');
@@ -19,7 +20,7 @@ async function fetchComments() {
         return;
     }
 
-    commentsList.innerHTML = ''; // Clear existing comments
+    commentsList.innerHTML = '';
 
     data.forEach(comment => {
         const li = document.createElement('li');
@@ -44,10 +45,10 @@ commentForm.addEventListener('submit', async (event) => {
         return;
     }
 
-    document.getElementById('username').value = ''; //clear input fields.
+    document.getElementById('username').value = '';
     document.getElementById('comment').value = '';
 
-    fetchComments(); // Refresh comments
+    fetchComments();
 });
 
 // Initial fetch of comments
